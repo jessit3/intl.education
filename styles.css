@@ -205,3 +205,13 @@ footer a,footer .cookie-link{color:var(--ink)}
   .logo-anim .head-fill{opacity:1}
   .logo-anim .layer{opacity:.85;transform:none}
 }
+.video{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--panel)}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.page-hero .art .video{width:100%}
+.page-hero .art:has(.video){max-width:560px}
+@media (max-width:860px){.page-hero .art:has(.video){order:0;max-width:none}}
+blockquote.q{font-family:var(--head);font-weight:700;font-size:1.25rem;line-height:1.35}
+.price-card.light{background:var(--panel);color:var(--ink)}
+.price-card.light h2,.price-card.light h3,.price-card.light p,.price-card.light li{color:var(--ink)}
+.price-card.light .eyebrow{color:var(--ink-soft)}
+.price-card.light .ticks li::before{background:var(--action)}
