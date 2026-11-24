@@ -186,14 +186,22 @@ footer a,footer .cookie-link{color:var(--ink)}
 
 /* ---------- Animated logo ---------- */
 .brand img{width:44px;height:44px}
-.logo-anim .globe-spin{animation:globe-spin 48s linear infinite}
-@keyframes globe-spin{to{transform:translateX(-400px)}}
-.logo-anim .layer{transform-box:fill-box;transform-origin:center;animation:mind-pulse 7s ease-in-out infinite alternate}
-.logo-anim .l2{animation-delay:-1.2s}.logo-anim .l3{animation-delay:-2.4s}.logo-anim .l4{animation-delay:-3.6s}.logo-anim .l5{animation-delay:-4.8s}.logo-anim .l6{animation-delay:-6s}
-@keyframes mind-pulse{from{transform:scale(.9)}to{transform:scale(1.12)}}
-.logo-anim .mind{transform-box:fill-box;transform-origin:center;animation:mind-zoom 14s ease-in-out infinite alternate}
-@keyframes mind-zoom{from{transform:scale(1)}to{transform:scale(1.08)}}
-.logo-anim .bub{transform-box:fill-box;transform-origin:center;opacity:0;animation:bubble-rise 9s ease-in-out infinite}
-.logo-anim .b2{animation-delay:-1.8s;animation-duration:10s}.logo-anim .b3{animation-delay:-3.6s;animation-duration:8s}.logo-anim .b4{animation-delay:-5.4s;animation-duration:11s}.logo-anim .b5{animation-delay:-7.2s}
-@keyframes bubble-rise{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}80%{opacity:.6}100%{transform:translate(-36px,-110px);opacity:0}}
-@media (prefers-reduced-motion:reduce){.logo-anim .bub{opacity:.8}}
+.logo-anim .head-outline{stroke-dasharray:1000;stroke-dashoffset:1000;animation:head-draw 2.6s ease-in-out .4s forwards}
+@keyframes head-draw{to{stroke-dashoffset:0}}
+.logo-anim .head-fill{opacity:0;animation:fade-in 1.2s ease 2s forwards}
+@keyframes fade-in{to{opacity:1}}
+.logo-anim .layer{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.1);
+  animation:mind-pop 1.4s cubic-bezier(.3,1.4,.5,1) 3s forwards, mind-breathe 7s ease-in-out 5s infinite alternate}
+.logo-anim .l2{animation-delay:3.7s,5.7s}.logo-anim .l3{animation-delay:4.4s,6.4s}.logo-anim .l4{animation-delay:5.1s,7.1s}
+.logo-anim .l5{animation-delay:5.8s,7.8s}.logo-anim .l6{animation-delay:6.5s,8.5s}.logo-anim .l7{animation-delay:7.2s,9.2s}
+@keyframes mind-pop{to{opacity:.85;transform:scale(1)}}
+@keyframes mind-breathe{from{opacity:.85;transform:scale(1)}to{opacity:.85;transform:scale(1.1)}}
+.logo-anim .bub{opacity:0;transform-box:fill-box;transform-origin:center;animation:bubble-rise 9s ease-in-out 8s infinite}
+.logo-anim .b2{animation-delay:9.8s;animation-duration:10s}.logo-anim .b3{animation-delay:11.6s;animation-duration:8s}
+.logo-anim .b4{animation-delay:13.4s;animation-duration:11s}.logo-anim .b5{animation-delay:15.2s}
+@keyframes bubble-rise{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}80%{opacity:.6}100%{transform:translate(-30px,-110px);opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .logo-anim .head-outline{stroke-dashoffset:0}
+  .logo-anim .head-fill{opacity:1}
+  .logo-anim .layer{opacity:.85;transform:none}
+}
