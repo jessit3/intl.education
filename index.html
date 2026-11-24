@@ -26,7 +26,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="INTL Edu home">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="8" r="4.2" fill="#05ABC4"/><circle cx="19.5" cy="11" r="2.6" fill="#b180bd"/><circle cx="8.5" cy="5" r="2" fill="#b3c9f1"/><circle cx="11" cy="15" r="6" fill="none" stroke="#3c2415" stroke-width="1.8"/></svg>
+      <img src="img/logo-mark.webp" alt="" width="44" height="44">
       INTL Edu
     </a>
     <nav class="nav" aria-label="Main">
@@ -56,25 +56,57 @@
 
       <!-- Large illustration: a globe with a tree of ideas growing out of it -->
       <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 520 520">
-          <circle cx="300" cy="300" r="200" fill="#ded2eb"/>
-          <g fill="none" stroke="#3c2415" stroke-linecap="round">
-            <circle cx="250" cy="330" r="150" stroke-width="9"/>
-            <path d="M250 180c46 40 46 260 0 300M250 180c-46 40-46 260 0 300" stroke-width="5" opacity=".5"/>
-            <path d="M108 280h284M108 380h284" stroke-width="5" opacity=".5"/>
-            <path d="M250 180V96" stroke-width="9"/>
-            <path d="M250 140l-44-34M250 120l40-36" stroke-width="7"/>
+        <!-- Animated INTL Edu logo: a turning globe, a mind made of colorful layers, and bubbles of ideas floating up -->
+        <svg viewBox="0 0 520 520" class="logo-anim">
+          <defs>
+            <clipPath id="globe-clip"><circle cx="260" cy="270" r="197"/></clipPath>
+            <clipPath id="head-clip"><path d="M150,70 C190,62 225,85 230,120 C232,132 236,140 244,152 C247,157 243,160 237,161 C238,168 236,172 232,174 C235,180 233,186 226,188 C228,200 222,210 205,210 C196,211 193,220 195,235 L198,262 C170,270 140,268 115,258 C120,240 118,222 108,205 C92,180 92,140 108,110 C120,88 132,74 150,70Z"/></clipPath>
+          </defs>
+          <circle cx="260" cy="270" r="200" fill="#F6F0E0"/>
+          <g clip-path="url(#globe-clip)">
+            <g transform="translate(60 70)">
+              <g class="globe-spin" fill="#D0B048" opacity=".85">
+                <g transform="scale(1.3333)">
+                  <g><path d="M30,70 C50,50 95,45 110,60 C120,75 100,95 95,110 C85,120 75,135 70,150 C60,140 50,120 40,110 C30,100 22,85 30,70Z"/>
+<path d="M85,160 C100,155 112,165 110,185 C108,205 98,225 90,250 C82,240 80,215 76,195 C72,180 75,165 85,160Z"/>
+<path d="M150,65 C165,55 185,58 190,70 C185,80 170,85 160,90 C150,85 145,75 150,65Z"/>
+<path d="M155,105 C175,95 200,105 205,125 C210,150 195,175 185,200 C175,195 170,175 162,160 C150,145 145,120 155,105Z"/>
+<path d="M195,55 C230,40 275,50 290,75 C292,95 275,110 255,115 C240,120 230,135 215,130 C205,115 200,95 190,85 C188,72 190,62 195,55Z"/>
+<path d="M245,175 C262,168 282,175 285,190 C280,205 260,208 248,200 C240,192 238,182 245,175Z"/></g>
+                  <g transform="translate(300 0)"><path d="M30,70 C50,50 95,45 110,60 C120,75 100,95 95,110 C85,120 75,135 70,150 C60,140 50,120 40,110 C30,100 22,85 30,70Z"/>
+<path d="M85,160 C100,155 112,165 110,185 C108,205 98,225 90,250 C82,240 80,215 76,195 C72,180 75,165 85,160Z"/>
+<path d="M150,65 C165,55 185,58 190,70 C185,80 170,85 160,90 C150,85 145,75 150,65Z"/>
+<path d="M155,105 C175,95 200,105 205,125 C210,150 195,175 185,200 C175,195 170,175 162,160 C150,145 145,120 155,105Z"/>
+<path d="M195,55 C230,40 275,50 290,75 C292,95 275,110 255,115 C240,120 230,135 215,130 C205,115 200,95 190,85 C188,72 190,62 195,55Z"/>
+<path d="M245,175 C262,168 282,175 285,190 C280,205 260,208 248,200 C240,192 238,182 245,175Z"/></g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <circle cx="260" cy="270" r="200" fill="none" stroke="#D0B048" stroke-width="7"/>
+          <g transform="translate(80 40) scale(1.3)">
+            <g clip-path="url(#head-clip)">
+              <rect x="80" y="50" width="180" height="230" fill="#F6F0E0"/>
+              <g class="mind">
+                <circle class="layer" cx="120" cy="150" r="40" fill="#49B6C8" opacity=".85"/>
+                <circle class="layer l2" cx="152" cy="118" r="56" fill="#F6A623" opacity=".88"/>
+                <circle class="layer l3" cx="203" cy="108" r="46" fill="#E8483F" opacity=".82"/>
+                <circle class="layer l4" cx="208" cy="168" r="50" fill="#B03A6E" opacity=".8"/>
+                <circle class="layer l5" cx="146" cy="200" r="56" fill="#13879C" opacity=".88"/>
+                <circle class="layer l6" cx="198" cy="230" r="46" fill="#1E5A7A" opacity=".85"/>
+              </g>
+            </g>
           </g>
           <g>
-            <circle class="float" cx="250" cy="70" r="34" fill="#05ABC4"/>
-            <circle class="float d2" cx="196" cy="98" r="24" fill="#b180bd"/>
-            <circle class="float d3" cx="304" cy="78" r="22" fill="#b3c9f1"/>
-            <circle class="float d2" cx="340" cy="128" r="14" fill="#05ABC4"/>
-            <circle class="float" cx="160" cy="148" r="11" fill="#b3c9f1"/>
-            <circle class="float d3" cx="214" cy="40" r="9" fill="#b180bd"/>
+            <circle cx="230" cy="128" r="22" fill="#4E9F6E"/>
+            <circle cx="196" cy="168" r="14" fill="#4E9F6E" opacity=".75"/>
+            <circle cx="182" cy="228" r="22" fill="#13879C"/>
+            <circle class="bub" cx="214" cy="96" r="9" fill="#4E9F6E"/>
+            <circle class="bub b2" cx="200" cy="120" r="7" fill="#F6A623"/>
+            <circle class="bub b3" cx="226" cy="74" r="6" fill="#13879C"/>
+            <circle class="bub b4" cx="186" cy="150" r="8" fill="#49B6C8"/>
+            <circle class="bub b5" cx="240" cy="104" r="5" fill="#E8483F"/>
           </g>
-          <path d="M440 150l6 26 26 6-26 6-6 26-6-26-26-6 26-6z" fill="#b180bd" class="float d2"/>
-          <circle cx="250" cy="330" r="16" fill="#05ABC4"/>
         </svg>
       </div>
     </div>

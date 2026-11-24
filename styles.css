@@ -183,3 +183,17 @@ footer a,footer .cookie-link{color:var(--ink)}
 .chips a:hover{text-decoration:underline;text-underline-offset:4px}
 .give{margin-top:3rem;background:var(--panel);border-radius:24px;padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
 .give p{margin:0;max-width:60ch}
+
+/* ---------- Animated logo ---------- */
+.brand img{width:44px;height:44px}
+.logo-anim .globe-spin{animation:globe-spin 48s linear infinite}
+@keyframes globe-spin{to{transform:translateX(-400px)}}
+.logo-anim .layer{transform-box:fill-box;transform-origin:center;animation:mind-pulse 7s ease-in-out infinite alternate}
+.logo-anim .l2{animation-delay:-1.2s}.logo-anim .l3{animation-delay:-2.4s}.logo-anim .l4{animation-delay:-3.6s}.logo-anim .l5{animation-delay:-4.8s}.logo-anim .l6{animation-delay:-6s}
+@keyframes mind-pulse{from{transform:scale(.9)}to{transform:scale(1.12)}}
+.logo-anim .mind{transform-box:fill-box;transform-origin:center;animation:mind-zoom 14s ease-in-out infinite alternate}
+@keyframes mind-zoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+.logo-anim .bub{transform-box:fill-box;transform-origin:center;opacity:0;animation:bubble-rise 9s ease-in-out infinite}
+.logo-anim .b2{animation-delay:-1.8s;animation-duration:10s}.logo-anim .b3{animation-delay:-3.6s;animation-duration:8s}.logo-anim .b4{animation-delay:-5.4s;animation-duration:11s}.logo-anim .b5{animation-delay:-7.2s}
+@keyframes bubble-rise{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}80%{opacity:.6}100%{transform:translate(-36px,-110px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.logo-anim .bub{opacity:.8}}
