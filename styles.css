@@ -177,3 +177,9 @@ footer a,footer .cookie-link{color:var(--ink)}
 .nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
 .flags{font-size:.9em;margin-left:.3em;white-space:nowrap}
 .role a{color:inherit}
+.chips{list-style:none;padding:0;margin:1rem 0 0;display:flex;flex-wrap:wrap;gap:12px}
+.chips li{background:var(--white);border:2px solid var(--panel);border-radius:999px;padding:10px 20px;font-weight:800;font-size:1.0625rem}
+.chips a{color:var(--ink);text-decoration:none}
+.chips a:hover{text-decoration:underline;text-underline-offset:4px}
+.give{margin-top:3rem;background:var(--panel);border-radius:24px;padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.give p{margin:0;max-width:60ch}
