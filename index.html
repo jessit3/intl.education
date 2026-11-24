@@ -6,6 +6,7 @@
 <title>INTL Edu | Project-based learning and global community for curious young people</title>
 <meta name="description" content="INTL Education CIC helps curious young people aged 7 to 17 lead real projects, build skills school leaves out and connect with peers in 80 countries. Our 12-week Respectful Rebels program starts January 8, 2027.">
 <link rel="canonical" href="https://www.intl.education/">
+<link rel="privacy-policy" href="privacy">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="INTL Edu">
 <meta property="og:title" content="INTL Edu | We trust in kids">
@@ -149,7 +150,8 @@ p{margin:0 0 1em;max-width:62ch}
 
 footer{padding:40px 0;font-size:1rem;color:var(--ink-soft)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-footer a{color:var(--ink)}
+footer a,footer .cookie-link{color:var(--ink)}
+.cookie-link{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
 
 /* Gentle motion. Content is fully visible without JavaScript. */
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
@@ -388,7 +390,7 @@ footer a{color:var(--ink)}
 <footer>
   <div class="wrap">
     <span>INTL Education CIC · Company No. 14915357 · <a href="mailto:hello@intl.education">hello@intl.education</a></span>
-    <span><a href="privacy" target="_top">Privacy</a> · <a href="accessibility" target="_top">Accessibility</a></span>
+    <span><a href="privacy">Privacy</a> · <a href="accessibility">Accessibility</a> · <button type="button" class="cookie-link" data-cookie-settings>Cookie settings</button></span>
   </div>
 </footer>
 
@@ -402,5 +404,6 @@ footer a{color:var(--ink)}
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 })();
 </script>
+<script src="consent.js" defer></script>
 </body>
 </html>
