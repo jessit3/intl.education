@@ -7,10 +7,14 @@
    TO TURN TRACKING ON: paste your IDs between the quotes below.
    - Clarity: clarity.microsoft.com > your project > Settings > Setup
    - Microsoft Advertising: Tools > UET tag > your tag ID (numbers)
+   - Meta Pixel: Events Manager > your pixel > ID
+   - Google Analytics: Admin > Data streams > Measurement ID (G-...)
    ============================================================ */
 (function () {
   var CLARITY_ID = "";   // e.g. "abc123xyz"
   var UET_ID = "";       // e.g. "12345678"
+  var META_PIXEL_ID = "2085022399058293";  // Meta (Facebook) Pixel
+  var GA_ID = "";        // Google Analytics 4, e.g. "G-ABC123XYZ"
 
   var KEY = "intl-cookie-choice"; // "accepted" or "rejected"
 
@@ -40,10 +44,24 @@
         i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i);
       })(window, document, "script", "https://bat.bing.com/bat.js", "uetq");
     }
+    if (META_PIXEL_ID) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", META_PIXEL_ID); fbq("track", "PageView");
+    }
+    if (GA_ID) {
+      var g = document.createElement("script"); g.async = 1; g.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag("js", new Date()); gtag("config", GA_ID);
+    }
   }
 
   function clearTrackingCookies() {
-    var names = ["_clck", "_clsk", "CLID", "ANONCHK", "SM", "MR", "_uetsid", "_uetvid", "_uetmsclkid", "MUID"];
+    var names = ["_clck", "_clsk", "CLID", "ANONCHK", "SM", "MR", "_uetsid", "_uetvid", "_uetmsclkid", "MUID", "_fbp", "_fbc", "_ga", "_gid", "_gat"];
+    document.cookie.split(";").forEach(function (k) { k = k.split("=")[0].trim(); if (k.indexOf("_ga_") === 0) names.push(k); });
     var host = location.hostname, parts = host.split("."), domains = ["", host];
     if (parts.length > 1) domains.push("." + parts.slice(-2).join("."), "." + host);
     names.forEach(function (n) {
