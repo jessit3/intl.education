@@ -19,151 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   INTL Edu home page. Edit the links in the LINKS list at the
-   bottom of this file, or search for "href" below.
-   ============================================================ */
-:root{
-  --bg:#FAF8F6; --panel:#ded2eb; --accent:#b3c9f1; --teal:#05ABC4;
-  --action:#037A8C; --action-hover:#026273; --pop:#b180bd; --ink:#3c2415;
-  --ink-soft:#5c4637; --white:#ffffff;
-  --head:'Montserrat',Arial,sans-serif; --body:'Nunito','Segoe UI',Arial,sans-serif;
-  --radius:16px; --wrap:1160px;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.1875rem;line-height:1.65}
-img,svg{display:block;max-width:100%}
-a{color:var(--action)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0 0 .5em;color:var(--ink)}
-h1{font-size:clamp(3rem,8vw,6.25rem);font-weight:800;letter-spacing:-.03em}
-h2{font-size:clamp(2rem,4.4vw,3.25rem);font-weight:800;letter-spacing:-.02em}
-h3{font-size:1.375rem;font-weight:700}
-p{margin:0 0 1em;max-width:62ch}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.section{padding:clamp(72px,10vw,128px) 0}
-.eyebrow{font-weight:800;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem}
-.lead{font-size:clamp(1.2rem,2vw,1.4rem);color:var(--ink-soft)}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-/* Buttons: deep teal with white text passes WCAG AA (5.0:1) */
-.btn{display:inline-flex;align-items:center;gap:.5em;min-height:52px;padding:14px 28px;border-radius:14px;font-family:var(--body);font-weight:800;font-size:1.0625rem;text-decoration:none;transition:transform .2s ease,background-color .2s ease}
-.btn-primary{background:var(--action);color:var(--white)}
-.btn-primary:hover{background:var(--action-hover);transform:translateY(-3px)}
-.btn-ghost{color:var(--ink);border:2px solid var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--white);transform:translateY(-3px)}
-.btn-light{background:var(--white);color:var(--ink)}
-.btn-light:hover{background:var(--panel);transform:translateY(-3px)}
-.btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:2rem}
-
-/* Header */
-.top{padding:22px 0}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--head);font-weight:800;font-size:1.5rem}
-.brand svg{width:34px;height:34px}
-.brand{white-space:nowrap}
-@media (max-width:480px){.nav .btn{padding:10px 14px;font-size:.95rem;white-space:nowrap}.hero-art{max-width:300px}}
-.nav{display:flex;align-items:center;gap:28px}
-.nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:1rem}
-.nav a:hover{text-decoration:underline;text-underline-offset:5px}
-.nav .btn{color:var(--white);min-height:46px;padding:10px 20px}
-@media (max-width:860px){.nav a:not(.btn){display:none}}
-
-/* Hero */
-.hero{padding:clamp(32px,6vw,72px) 0 clamp(72px,9vw,120px)}
-.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.hero h1 .hl{position:relative;white-space:nowrap}
-.hero h1 .hl svg{position:absolute;left:0;right:0;bottom:-.12em;width:100%;height:.28em}
-.hero .note{margin-top:1.25rem;font-weight:700;font-size:1rem;color:var(--ink-soft)}
-.hero-art{position:relative;aspect-ratio:1/1;max-width:600px;justify-self:end;width:100%}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-art{justify-self:center;max-width:380px;order:-1}}
-
-/* Worries */
-.worries{background:var(--panel)}
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
-.worry{background:var(--bg);border-radius:var(--radius);padding:32px 28px}
-.worry .q{font-family:var(--head);font-weight:700;font-size:1.35rem;line-height:1.3;margin:0 0 .75rem}
-.worry .a{margin:0;color:var(--ink-soft)}
-.worry .mark{font-family:var(--head);font-weight:800;font-size:4rem;line-height:.6;color:var(--pop);display:block;height:.5em}
-@media (max-width:860px){.cards3{grid-template-columns:1fr}}
-
-/* Path */
-.path{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
-.step{position:relative;padding:36px 28px 32px;border-radius:var(--radius);border:2px solid var(--ink)}
-.step.main{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.step.main h3,.step.main .when{color:var(--white)}
-.step .num{font-family:var(--head);font-weight:800;font-size:4.5rem;line-height:1;color:var(--teal);margin-bottom:.5rem}
-.step.main .num{color:var(--accent)}
-.step .when{font-weight:800;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
-.step p{margin-bottom:.5em}
-.step .price{font-weight:800;margin-top:1rem}
-.step.main a{color:var(--white)}
-@media (max-width:860px){.path{grid-template-columns:1fr}}
-
-/* Skills */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:3rem}
-.skill svg{width:96px;height:96px;margin-bottom:18px}
-@media (max-width:860px){.skills{grid-template-columns:1fr;gap:32px}}
-
-/* Rebels */
-.rebels-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
-.rebels{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rebel{background:var(--white);border-radius:var(--radius);padding:24px 24px 22px;transition:transform .2s ease}
-.rebel h3::before{content:'';display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:.08em}
-.rebel:hover{transform:translateY(-4px)}
-.rebel h3{margin-bottom:.35rem}
-.rebel p{margin:0;font-size:1.0625rem;color:var(--ink-soft)}
-@media (max-width:860px){.rebels{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.rebels{grid-template-columns:1fr}}
-
-/* Proof band */
-.band{background:var(--action);color:var(--white)}
-.band h2,.band p{color:var(--white)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:2.5rem}
-.stat .big{font-family:var(--head);font-weight:800;font-size:clamp(2.75rem,5vw,4rem);line-height:1;margin-bottom:.4rem}
-.stat p{margin:0}
-@media (max-width:860px){.stats{grid-template-columns:1fr}}
-
-/* Founders */
-.founders{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.faces{display:flex;gap:20px;align-items:flex-start}
-.face{flex:0 0 calc(50% - 10px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:3rem;color:var(--ink)}
-.face img{width:100%;height:100%;object-fit:cover}
-.face.jess{background:var(--pop)}
-.face.james{background:var(--teal);margin-top:48px}
-@media (max-width:860px){.founders{grid-template-columns:1fr}.faces{max-width:420px}}
-
-/* Honest note */
-.honest{background:var(--panel);border-radius:24px;padding:clamp(32px,5vw,56px);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
-.honest svg{width:72px;height:72px}
-.honest p:last-child{margin:0}
-@media (max-width:560px){.honest{grid-template-columns:1fr}}
-
-/* Closing */
-.closing{background:var(--ink);color:var(--white);text-align:left}
-.closing .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.closing h2,.closing p{color:var(--white)}
-.closing svg{width:220px;height:220px}
-@media (max-width:860px){.closing .wrap{grid-template-columns:1fr}.closing svg{width:140px;height:140px}}
-
-footer{padding:40px 0;font-size:1rem;color:var(--ink-soft)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-footer a,footer .cookie-link{color:var(--ink)}
-.cookie-link{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
-
-/* Gentle motion. Content is fully visible without JavaScript. */
-.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.js .reveal.in{opacity:1;transform:none}
-@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.float{animation:drift 7s ease-in-out infinite}
-.float.d2{animation-delay:-2.3s}.float.d3{animation-delay:-4.6s}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .reveal{opacity:1;transform:none}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -174,11 +30,11 @@ footer a,footer .cookie-link{color:var(--ink)}
       INTL Edu
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="respectful-rebels" target="_top">Programs</a>
-      <a href="ikc" target="_top">Kids' Council</a>
-      <a href="https://rebelshandbook.com/" target="_top">The book</a>
-      <a href="about" target="_top">About us</a>
-      <a class="btn btn-primary" href="https://rebels.quest/12-days-of-rebels-form" target="_top">Join the challenge</a>
+      <a href="respectful-rebels">Respectful Rebels</a>
+      <a href="https://go.intl.education/ikc">Kids' Council</a>
+      <a href="https://rebelshandbook.com/">The book</a>
+      <a href="about">About us</a>
+      <a class="btn btn-primary" href="https://rebels.quest/12-days-of-rebels-form">Join the challenge</a>
     </nav>
   </div>
 </header>
@@ -192,8 +48,8 @@ footer a,footer .cookie-link{color:var(--ink)}
         <h1 id="hero-title">We trust <span class="hl">in kids.<svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12c12-8 24-8 36 0s24 8 36 0 24-8 40 0" fill="none" stroke="#05ABC4" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
         <p class="lead">Real projects, a real voice and friends across the world, for curious young people who are ready for learning that fits them.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="https://rebels.quest/12-days-of-rebels-form" target="_top">Join the challenge</a>
-          <a class="btn btn-ghost" href="https://rebels.quest/freebie" target="_top">Try a free puzzle</a>
+          <a class="btn btn-primary" href="https://rebels.quest/12-days-of-rebels-form">Join the challenge</a>
+          <a class="btn btn-ghost" href="https://rebels.quest/freebie">Try a free puzzle</a>
         </div>
         <p class="note">Our 12-week Respectful Rebels program starts Friday, January 8, 2027.</p>
       </div>
@@ -266,7 +122,7 @@ footer a,footer .cookie-link{color:var(--ink)}
           <p class="when">From Friday, January 8, 2027</p>
           <h3>Respectful Rebels: 12 weeks</h3>
           <p>Your teen plans and launches a real project of their own, with portfolio pieces built in.</p>
-          <p class="price">£197 per person, or <a href="respectful-rebels#sponsored" target="_top">apply for a sponsored place</a>. Puzzle players get early-bird pricing.</p>
+          <p class="price">£197 per person, or <a href="respectful-rebels#sponsored">apply for a sponsored place</a>. Puzzle players get early-bird pricing.</p>
         </li>
         <li class="step reveal">
           <div class="num" aria-hidden="true">3</div>
@@ -275,7 +131,7 @@ footer a,footer .cookie-link{color:var(--ink)}
           <p>Graduates join an ongoing community. Eligible graduates are invited to apply for a sponsored scholarship.</p>
         </li>
       </ol>
-      <div class="btn-row reveal"><a class="btn btn-primary" href="respectful-rebels" target="_top">See the January program</a></div>
+      <div class="btn-row reveal"><a class="btn btn-primary" href="respectful-rebels">See the January program</a></div>
     </div>
   </section>
 
@@ -311,7 +167,7 @@ footer a,footer .cookie-link{color:var(--ink)}
           <p class="eyebrow reveal">Nine ways to be a Respectful Rebel</p>
           <h2 id="rebels-title" class="reveal" style="margin:0">Which kind of Rebel are you?</h2>
         </div>
-        <a class="btn btn-primary reveal" href="https://rebels.quest/freebie#rebel-quiz" target="_top">Take the quiz</a>
+        <a class="btn btn-primary reveal" href="https://rebels.quest/freebie#rebel-quiz">Take the quiz</a>
       </div>
       <ul class="rebels">
         <li class="rebel reveal" style="--c:#05ABC4"><h3>Advocate</h3><p>Notices who's missing from the conversation and speaks up so they're heard.</p></li>
@@ -346,15 +202,15 @@ footer a,footer .cookie-link{color:var(--ink)}
       <div class="faces reveal">
         <!-- To add photos: replace the letter inside each div with
              <img src="YOUR-PHOTO-URL" alt="Jess Marsh"> -->
-        <div class="face jess">J</div>
-        <div class="face james">J</div>
+        <div class="face jess"><img src="img/jess-marsh.webp" alt="Jess Marsh, co-founder of INTL Education" width="640" height="640" loading="lazy"></div>
+        <div class="face james"><img src="img/james-marsh.webp" alt="James Marsh, co-founder of INTL Education" width="500" height="500" loading="lazy"></div>
       </div>
       <div class="reveal">
         <p class="eyebrow">Hi, we're Jess and James</p>
         <h2 id="founders-title">Two educators who worldschool our own child</h2>
         <p>Jess has spent 20+ years as an international educator, with a Master's in Educational Psychology from USC and time at Google for Education. She also writes The Rebels' Handbook as J.R. Tyerman.</p>
         <p>James is a credentialed educator who works with neurodivergent learners every day. Together we built the place we wanted for our own family.</p>
-        <a class="btn btn-ghost" href="about" target="_top">Read our story</a>
+        <a class="btn btn-ghost" href="about">Read our story</a>
       </div>
     </div>
   </section>
@@ -379,7 +235,7 @@ footer a,footer .cookie-link{color:var(--ink)}
         <h2 id="close-title" class="reveal">Let's find their spark again.</h2>
         <p class="lead reveal" style="color:#fff">Start with one puzzle this December. See where it leads.</p>
         <div class="btn-row reveal">
-          <a class="btn btn-light" href="https://rebels.quest/12-days-of-rebels-form" target="_top">Join the challenge</a>
+          <a class="btn btn-light" href="https://rebels.quest/12-days-of-rebels-form">Join the challenge</a>
         </div>
       </div>
       <svg viewBox="0 0 24 24" aria-hidden="true" class="float"><path d="M12 3.8c2.3 2.6 4.8 5.6 4.8 9.3 0 3.6-2.7 6.4-4.8 6.4s-4.8-2.8-4.8-6.4c0-1.8.8-3.2 1.7-4.5-.1 1.6.7 2.6 1.6 2.6.9 0 1.1-1 .8-1.9-.5-1.7-.2-3.6.7-5.5z" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/><circle cx="12" cy="12.3" r="1.6" fill="#05ABC4"/></svg>
@@ -390,7 +246,7 @@ footer a,footer .cookie-link{color:var(--ink)}
 <footer>
   <div class="wrap">
     <span>INTL Education CIC · Company No. 14915357 · <a href="mailto:hello@intl.education">hello@intl.education</a></span>
-    <span><a href="privacy">Privacy</a> · <a href="accessibility">Accessibility</a> · <button type="button" class="cookie-link" data-cookie-settings>Cookie settings</button></span>
+    <span><a href="https://go.intl.education/1to1support">1:1 learning support</a> · <a href="https://bit.ly/INTLcal">Book a call</a> · <a href="privacy">Privacy</a> · <a href="accessibility">Accessibility</a> · <button type="button" class="cookie-link" data-cookie-settings>Cookie settings</button></span>
   </div>
 </footer>
 

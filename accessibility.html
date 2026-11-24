@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility | INTL Edu</title>
+<meta name="description" content="How INTL Education CIC makes this website accessible, and how to tell us if something gets in your way.">
+<link rel="canonical" href="https://www.intl.education/accessibility">
+<link rel="privacy-policy" href="privacy">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INTL Edu">
+<meta property="og:title" content="Accessibility | INTL Edu">
+<meta property="og:description" content="How INTL Education CIC makes this website accessible, and how to tell us if something gets in your way.">
+<meta property="og:url" content="https://www.intl.education/accessibility">
+<meta name="theme-color" content="#FAF8F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="INTL Edu home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="8" r="4.2" fill="#05ABC4"/><circle cx="19.5" cy="11" r="2.6" fill="#b180bd"/><circle cx="8.5" cy="5" r="2" fill="#b3c9f1"/><circle cx="11" cy="15" r="6" fill="none" stroke="#3c2415" stroke-width="1.8"/></svg>
+      INTL Edu
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="respectful-rebels">Respectful Rebels</a>
+      <a href="https://go.intl.education/ikc">Kids' Council</a>
+      <a href="https://rebelshandbook.com/">The book</a>
+      <a href="about">About us</a>
+      <a class="btn btn-primary" href="https://rebels.quest/12-days-of-rebels-form">Join the challenge</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="section" aria-labelledby="acc-title">
+  <div class="wrap" style="max-width:820px">
+    <h1 id="acc-title" style="font-size:clamp(2.5rem,6vw,4rem)">Accessibility</h1>
+    <p class="lead">We want everyone to be able to use this site, whatever device, ability or way of learning.</p>
+    <h2 style="font-size:1.6rem;margin-top:2em">What we've done</h2>
+    <ul class="ticks">
+      <li>Text and buttons meet WCAG 2.2 AA color contrast.</li>
+      <li>Every page works with a keyboard alone, with a visible focus outline.</li>
+      <li>Large, left-aligned text with comfortable line lengths, following Universal Design for Learning.</li>
+      <li>Animations are gentle and switch off if your device is set to reduce motion.</li>
+      <li>Images have text descriptions; decorative graphics are hidden from screen readers.</li>
+    </ul>
+    <h2 style="font-size:1.6rem;margin-top:2em">Tell us if something gets in your way</h2>
+    <p>If any part of this site is hard to use, email <a href="mailto:hello@intl.education?subject=Accessibility">hello@intl.education</a> and we'll fix it or get you the information another way.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>INTL Education CIC · Company No. 14915357 · <a href="mailto:hello@intl.education">hello@intl.education</a></span>
+    <span><a href="https://go.intl.education/1to1support">1:1 learning support</a> · <a href="https://bit.ly/INTLcal">Book a call</a> · <a href="privacy">Privacy</a> · <a href="accessibility">Accessibility</a> · <button type="button" class="cookie-link" data-cookie-settings>Cookie settings</button></span>
+  </div>
+</footer>
+
+<script>
+/* Scroll reveal: adds motion only when JavaScript runs and the visitor hasn't asked for less motion. */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+<script src="consent.js" defer></script>
+</body>
+</html>
